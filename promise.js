@@ -2,11 +2,9 @@ const { promiseTheaterIXX, promiseTheaterVGC } = require("./external.js");
 // TODO: Buat fungsi promiseOutput sesuai ketentuan readme
 const promiseOutput = async(parameter)=>{
     let hasil = 0
-    let dataTheaterIXX 
-    let dataTheaterVGC  
       try {
-        dataTheaterIXX = await promiseTheaterIXX()
-        dataTheaterVGC = await promiseTheaterVGC()
+        let dataTheaterIXX = await promiseTheaterIXX()
+        let dataTheaterVGC = await promiseTheaterVGC()
 
         await dataTheaterIXX.forEach(element => {
           hasil += element.hasil === parameter ? 1 : 0

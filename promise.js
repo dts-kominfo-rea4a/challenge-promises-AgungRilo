@@ -2,6 +2,7 @@ const { promiseTheaterIXX, promiseTheaterVGC } = require("./external.js");
 // TODO: Buat fungsi promiseOutput sesuai ketentuan readme
 const promiseOutput = async(emosi)=>{
     let hasil = 0
+    return new Promise(async (resolve, reject) => {
       try {
         let dataTheaterIXX = await promiseTheaterIXX()
         let dataTheaterVGC = await promiseTheaterVGC()
@@ -12,10 +13,12 @@ const promiseOutput = async(emosi)=>{
         await dataTheaterVGC.forEach(element => {
           hasil += element.hasil === emosi ? 1 : 0
         });
+        resolve(hasil)
       } catch (error) {
-        console.log(error)
+        reject(error)
       }
-    return hasil
+    })
+    
 };
 
 

@@ -3,8 +3,7 @@ const { promiseTheaterIXX, promiseTheaterVGC } = require("./external.js");
 const promiseOutput = async(parameter)=>{
     let hasil = 0
     let dataTheaterIXX 
-    let dataTheaterVGC 
-    const hitungPromiseOutput = async ()=>{
+    let dataTheaterVGC  
       try {
         dataTheaterIXX = await promiseTheaterIXX()
         dataTheaterVGC = await promiseTheaterVGC()
@@ -18,8 +17,6 @@ const promiseOutput = async(parameter)=>{
       } catch (error) {
         console.log(error)
       }
-    }
-    await hitungPromiseOutput()
     return hasil
 };
 
